@@ -217,7 +217,12 @@ h3 {
 .btn-select-pokemon {
   width: 300px;
   padding: 10px;
-  background-color: red;
+  background: linear-gradient(
+    -45deg,
+    rgb(255, 0, 0) 0%,
+    rgb(255, 77, 0) 50%,
+    rgba(140, 2, 2, 1) 100%
+  );
   border-radius: 20px;
   color: white;
   font-family: "Pokemon_Classic";
@@ -225,6 +230,16 @@ h3 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  animation: btn-select-pookemon-gradient 1s ease infinite;
+}
+
+@keyframes btn-select-pookemon-gradient {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .opacity-0-5 {
