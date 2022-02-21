@@ -1,0 +1,239 @@
+@font-face {
+  font-family: "Ketchum";
+  src: url("./fonts/Ketchum.otf");
+}
+
+@font-face {
+  font-family: "Pokemon_Classic";
+  src: url("./fonts/Pokemon_Classic.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  background: url("./img/fond.png") no-repeat;
+  background-size: cover;
+  background-color: black;
+}
+
+h1 {
+  color: black;
+  font-family: "Pokemon_Classic";
+  text-align: center;
+  font-size: 6em;
+  color: rgba(255, 255, 255, 1);
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+    #f2ff00 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d2d 0px 0px 40px,
+    #ff2d2d 0px 0px 50px, #ff2d95 0px 0px 75px;
+  animation-duration: 5s;
+  animation-name: animH1;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animH1 {
+  0% {
+    text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+      #f2ff00 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d2d 0px 0px 40px,
+      #ff2d2d 0px 0px 50px, #ff2d95 0px 0px 75px;
+  }
+
+  50% {
+    text-shadow: #fff 0px 0px 5px, #fff 0px 0px 5px, #fff 0px 0px 15px,
+      #f2ff00 0px 0px 10px, #ff2d95 0px 0px 20px, #ff2d2d 0px 0px 20px,
+      #ff2d2d 0px 0px 10px, #ff2d95 0px 0px 15px;
+  }
+
+  100% {
+    text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+      #f2ff00 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d2d 0px 0px 40px,
+      #ff2d2d 0px 0px 50px, #ff2d95 0px 0px 75px;
+  }
+}
+
+h2 {
+  color: black;
+  font-family: "Pokemon_Classic";
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+    #00eeff 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d2d 0px 0px 40px,
+    #2ddfff 0px 0px 50px, #2daeff 0px 0px 75px;
+  font-size: 3em;
+  position: relative;
+  animation-duration: 5s;
+  animation-name: animH2;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animH2 {
+  0% {
+    text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+      #00eeff 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d2d 0px 0px 40px,
+      #2ddfff 0px 0px 50px, #2daeff 0px 0px 75px;
+  }
+
+  50% {
+    text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+      #00eeff 0px 0px 10px, #ff2d95 0px 0px 20px, #ff2d2d 0px 0px 20px,
+      #2ddfff 0px 0px 10px, #2daeff 0px 0px 15px;
+  }
+
+  100% {
+    text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+      #00eeff 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d2d 0px 0px 40px,
+      #2ddfff 0px 0px 50px, #2daeff 0px 0px 75px;
+  }
+}
+
+h3 {
+  color: black;
+  font-family: "Pokemon_Classic";
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px,
+    rgb(22, 220, 39) 0px 0px 15px, #09ff00 0px 0px 20px, #ff2d95 0px 0px 30px,
+    #ff2d2d 0px 0px 40px, #2ddfff 0px 0px 50px, #2dff50 0px 0px 75px;
+  font-size: 3em;
+  position: relative;
+  animation-duration: 5s;
+  animation-name: animH3;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animH3 {
+  0% {
+    text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px,
+      rgb(22, 220, 39) 0px 0px 15px, #09ff00 0px 0px 20px, #ff2d95 0px 0px 30px,
+      #ff2d2d 0px 0px 40px, #2ddfff 0px 0px 50px, #2dff50 0px 0px 75px;
+  }
+
+  50% {
+    text-shadow: #fff 0px 0px 5px, #fff 0px 0px 5px,
+      rgb(22, 220, 39) 0px 0px 15px, #09ff00 0px 0px 10px, #ff2d95 0px 0px 20px,
+      #ff2d2d 0px 0px 10px, #2ddfff 0px 0px 20px, #2dff50 0px 0px 15px;
+  }
+
+  100% {
+    text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px,
+      rgb(22, 220, 39) 0px 0px 15px, #09ff00 0px 0px 20px, #ff2d95 0px 0px 30px,
+      #ff2d2d 0px 0px 40px, #2ddfff 0px 0px 50px, #2dff50 0px 0px 75px;
+  }
+}
+
+.box-all-pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.img-pokemon {
+  width: 200px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.fond-degrader {
+  background: rgb(255, 0, 0);
+  background: linear-gradient(
+    -180deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(255, 255, 255, 1) 60%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  width: 210px;
+  height: 210px;
+  border-radius: 100%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.pokemon-fight {
+  display: flex;
+  justify-content: space-around;
+}
+
+.img-pokemon-fight {
+  border-radius: 20px;
+  box-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+    #f2ff00 0px 0px 20px, #ff2d95 0px 0px 30px, #2dff5a 0px 0px 40px,
+    #ff2d2d 0px 0px 50px, #ff2d95 0px 0px 75px;
+  animation-duration: 5s;
+  animation-name: animImgPkFight;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animImgPkFight {
+  0% {
+    box-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+      #f2ff00 0px 0px 20px, #ff2d95 0px 0px 30px, #2dff5a 0px 0px 40px,
+      #ff2d2d 0px 0px 50px, #ff2d95 0px 0px 75px;
+  }
+
+  50% {
+    box-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+      #f2ff00 0px 0px 10px, #ff2d95 0px 0px 20px, #2dff5a 0px 0px 20px,
+      #ff2d2d 0px 0px 10px, #ff2d95 0px 0px 15px;
+  }
+
+  100% {
+    box-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+      #f2ff00 0px 0px 20px, #ff2d95 0px 0px 30px, #2dff5a 0px 0px 40px,
+      #ff2d2d 0px 0px 50px, #ff2d95 0px 0px 75px;
+  }
+}
+
+.none {
+  display: none;
+}
+
+.box-icone-pokeball {
+  display: flex;
+  justify-content: center;
+}
+
+.icone-pokeball,
+.icone-pokeball-active {
+  width: 50px;
+  margin: 20px;
+}
+
+.box-btn-select-pokemon {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-select-pokemon {
+  width: 300px;
+  padding: 10px;
+  background-color: red;
+  border-radius: 20px;
+  color: white;
+  font-family: "Pokemon_Classic";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.opacity-0-5 {
+  opacity: 0.5;
+}
+
+.icone-close {
+  fill: red;
+  position: absolute;
+  width: 100px;
+  cursor: pointer;
+}
