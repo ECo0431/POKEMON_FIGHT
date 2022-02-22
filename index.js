@@ -14,6 +14,10 @@ let iconePokeball3Active = false;
 let pokemonSeleted = [];
 const BOXBTNPOKEMON = [];
 const ICONECLOSEBTN = [];
+const BOXBTNCOMBATTRE = [];
+const NOMPOKEMON = [];
+const BOXPVPEPOKEMON = [];
+const BOXIMGPOKEMONFIGHT = [];
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
@@ -22,10 +26,12 @@ function getRandomIntInclusive(min, max) {
 }
 
 class Pokemon {
-  constructor(pv, pe, type) {
+  constructor(name, pv, pe, type, image) {
+    this.name = name;
     this.pv = pv;
     this.pe = pe;
     this.type = type;
+    this.image = image;
   }
   attaqueDeNiveau1() {
     getRandomIntInclusive(1, 10);
@@ -38,18 +44,18 @@ class Pokemon {
   }
 }
 
-const CARAPUCE = new Pokemon(70, 200, "eau");
-const BULBIZZARE = new Pokemon(70, 200, "plante");
-const DRACAUFEU = new Pokemon(120, 200, "feu");
-const LEVIATOR = new Pokemon(100, 200, "eau");
-const MAGICARPE = new Pokemon(30, 200, "eau");
-const METAMORPH = new Pokemon(60, 200, "normal");
-const MEWTWO = new Pokemon(120, 200, "psy");
-const MRMIME = new Pokemon(80, 200, "psy");
-const PIKACHU = new Pokemon(60, 200, "electrique");
-const PSYKOKWAK = new Pokemon(60, 200, "eau");
-const RONDOUDOU = new Pokemon(70, 200, "fee");
-const RONFLEX = new Pokemon(150, 200, "normal");
+const CARAPUCE = new Pokemon("CARAPUCE", 70, 200, "eau", 0);
+const BULBIZZARE = new Pokemon("BULBIZZARE", 70, 200, "plante", 1);
+const DRACAUFEU = new Pokemon("DRACAUFEU", 120, 200, "feu", 2);
+const LEVIATOR = new Pokemon("LEVIATOR", 100, 200, "eau", 3);
+const MAGICARPE = new Pokemon("MAGICARPE", 30, 200, "eau", 4);
+const METAMORPH = new Pokemon("METAMORPH", 60, 200, "normal", 5);
+const MEWTWO = new Pokemon("MEWTWO", 120, 200, "psy", 6);
+const MRMIME = new Pokemon("MR-MIME", 80, 200, "psy", 7);
+const PIKACHU = new Pokemon("PIKACHU", 60, 200, "electrique", 8);
+const PSYKOKWAK = new Pokemon("PSYKOKWAK", 60, 200, "eau", 9);
+const RONDOUDOU = new Pokemon("RONDOUDOU", 70, 200, "fee", 10);
+const RONFLEX = new Pokemon("RONFLEX", 150, 200, "normal", 11);
 const ALLOBJECTPOKEMON = [
   CARAPUCE,
   BULBIZZARE,
@@ -71,10 +77,9 @@ for (let i = 0; i < NBRPOKEMON; i++) {
   BTNSELECTPOKEMON[i] = document.querySelector(`#btn-select-pokemon-${i}`);
   BOXBTNPOKEMON[i] = document.querySelector(`#box-btn-pokemon-${i}`);
   ICONECLOSEBTN[i] = document.querySelector(`#icone-close-${i}`);
+  BOXBTNCOMBATTRE[i] = document.querySelector(`.box-btn-combat-pokemon-${i}`);
   pokemonSeleted[i] = false;
 }
-
-console.log(ICONECLOSEBTN);
 
 function iconePokeballActive() {
   if (
@@ -145,6 +150,19 @@ for (let i = 0; i < BTNSELECTPOKEMON.length; i++) {
     );
     BOXBTNPOKEMON[i].classList.add("opacity-0-5");
     ICONECLOSEBTN[i].classList.remove("none");
+    if (
+      iconePokeball1Active == true &&
+      iconePokeball2Active == true &&
+      iconePokeball3Active == true
+    ) {
+      for (let i = 0; i < BTNSELECTPOKEMON.length; i++) {
+        BOXBTNCOMBATTRE[i].classList.remove("none-important");
+        BTNSELECTPOKEMON[i].classList.add("none-important");
+      }
+    }
+    console.log(iconePokeball1Active);
+    console.log(iconePokeball2Active);
+    console.log(iconePokeball3Active);
   });
   ICONECLOSEBTN[i].addEventListener("click", () => {
     localStorage.removeItem(`pokemonChoisi${i}`);
@@ -160,5 +178,60 @@ for (let x = 0; x < BTNPOKEMON.length; x++) {
       POKEMONFIGHT[i].classList.add("none");
     }
     POKEMONFIGHT[x].classList.remove("none");
+  });
+}
+
+for (let i = 0; i < ALLOBJECTPOKEMON.length; i++) {
+  NOMPOKEMON[i] = document.querySelector(`#nom-pokemon-${i}`);
+  BOXPVPEPOKEMON[i] = document.querySelector(`#box-pv-pe-${i}`);
+  BOXIMGPOKEMONFIGHT[i] = document.querySelector(`#box-img-pokemon-fight-${i}`);
+  NOMPOKEMON[i].innerHTML = `
+  <h2>${ALLOBJECTPOKEMON[i].name}<h2>
+`;
+  BOXPVPEPOKEMON[i].innerHTML = `
+  <h3 class="pv">${ALLOBJECTPOKEMON[i].pv}PV</h3><h3 class="pe">${ALLOBJECTPOKEMON[i].pe}PE</h3>
+`;
+  BOXIMGPOKEMONFIGHT[i].innerHTML = `
+<img class="img-pokemon-fight" src="./img/pokemon_fight_${i}.png">
+`;
+}
+
+const BOXPOKEMONENEMY = document.querySelector("#box-pokemon-enemy");
+
+console.log(BOXPOKEMONENEMY);
+
+for (let i = 0; i < ALLOBJECTPOKEMON.length; i++) {
+  BOXBTNCOMBATTRE[i].addEventListener("click", () => {
+    BOXPOKEMONENEMY.classList.remove("none");
+
+    setTimeout(generatorPokemonEnemy1, 100);
+    setTimeout(generatorPokemonEnemy1, 200);
+    setTimeout(generatorPokemonEnemy1, 300);
+    setTimeout(generatorPokemonEnemy1, 400);
+    setTimeout(generatorPokemonEnemy1, 500);
+    setTimeout(generatorPokemonEnemy1, 600);
+    setTimeout(generatorPokemonEnemy1, 700);
+    setTimeout(generatorPokemonEnemy1, 800);
+    setTimeout(generatorPokemonEnemy1, 900);
+    setTimeout(generatorPokemonEnemy1, 1000);
+    setTimeout(generatorPokemonEnemy1, 1100);
+    setTimeout(generatorPokemonEnemy1, 1200);
+    setTimeout(generatorPokemonEnemy1, 1300);
+    setTimeout(generatorPokemonEnemy1, 1400);
+    setTimeout(generatorPokemonEnemy1, 1500);
+    setTimeout(generatorPokemonEnemy1, 1600);
+
+    function generatorPokemonEnemy1() {
+      let rand = Math.floor(Math.random() * ALLOBJECTPOKEMON.length);
+      let rValue = ALLOBJECTPOKEMON[rand];
+      console.log(rValue);
+      BOXPOKEMONENEMY.innerHTML = `
+        <h2>${rValue.name}</h2>
+        <img class="img-pokemon-fight" src="./img/pokemon_fight_${rValue.image}.png">
+        <div class="box-pv-pe">
+        <h3 class="pv">${rValue.pv}PV</h3><h3 class="pe">${rValue.pe}PE</h3>
+        </div>
+        `;
+    }
   });
 }
