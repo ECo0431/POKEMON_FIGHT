@@ -8,6 +8,20 @@ const ICONEPOKEBALL2 = document.querySelector("#icone-pokeball-2");
 const ICONEPOKEBALL2ACTIVE = document.querySelector("#icone-pokeball-2-active");
 const ICONEPOKEBALL3 = document.querySelector("#icone-pokeball-3");
 const ICONEPOKEBALL3ACTIVE = document.querySelector("#icone-pokeball-3-active");
+const ICONEPOKEBALL1ENEMY = document.querySelector("#icone-pokeball-1-enemy");
+const ICONEPOKEBALL1ACTIVEENEMY = document.querySelector(
+  "#icone-pokeball-1-active-enemy"
+);
+
+console.log(ICONEPOKEBALL1ACTIVEENEMY);
+const ICONEPOKEBALL2ENEMY = document.querySelector("#icone-pokeball-2-enemy");
+const ICONEPOKEBALL2ACTIVEENEMY = document.querySelector(
+  "#icone-pokeball-2-active-enemy"
+);
+const ICONEPOKEBALL3ENEMY = document.querySelector("#icone-pokeball-3-enemy");
+const ICONEPOKEBALL3ACTIVEENEMY = document.querySelector(
+  "#icone-pokeball-3-active-enemy"
+);
 let iconePokeball1Active = false;
 let iconePokeball2Active = false;
 let iconePokeball3Active = false;
@@ -18,6 +32,9 @@ const BOXBTNCOMBATTRE = [];
 const NOMPOKEMON = [];
 const BOXPVPEPOKEMON = [];
 const BOXIMGPOKEMONFIGHT = [];
+const BOXICONEPOKEBALLENEMY = document.querySelector(
+  ".box-icone-pokeball-enemy"
+);
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
@@ -141,6 +158,7 @@ function iconePokeballRemove() {
 }
 
 for (let i = 0; i < BTNSELECTPOKEMON.length; i++) {
+  BOXIMGPOKEMONFIGHT[i] = document.querySelector(`#box-img-pokemon-fight-${i}`);
   BTNSELECTPOKEMON[i].addEventListener("click", () => {
     iconePokeballActive();
     pokemonSeleted[i] = true;
@@ -163,6 +181,10 @@ for (let i = 0; i < BTNSELECTPOKEMON.length; i++) {
     console.log(iconePokeball1Active);
     console.log(iconePokeball2Active);
     console.log(iconePokeball3Active);
+    BOXIMGPOKEMONFIGHT[i].innerHTML = `
+    <img class="pokemon-fight-pokeball" src="./img/pokemon_fight_pokeball.png">
+    <img class="img-pokemon-fight" src="./img/pokemon_fight_${i}.png">
+  `;
   });
   ICONECLOSEBTN[i].addEventListener("click", () => {
     localStorage.removeItem(`pokemonChoisi${i}`);
@@ -203,7 +225,16 @@ console.log(BOXPOKEMONENEMY);
 for (let i = 0; i < ALLOBJECTPOKEMON.length; i++) {
   BOXBTNCOMBATTRE[i].addEventListener("click", () => {
     BOXPOKEMONENEMY.classList.remove("none");
-
+    BOXICONEPOKEBALLENEMY.classList.remove("none");
+    for (let i = 0; i < ALLOBJECTPOKEMON.length; i++) {
+      BOXIMGPOKEMONFIGHT[i] = document.querySelector(
+        `#box-img-pokemon-fight-${i}`
+      );
+      BOXBTNCOMBATTRE[i].classList.add("none-important");
+      BOXIMGPOKEMONFIGHT[i].innerHTML = `
+      <img class="img-pokemon-fight" src="./img/pokemon_fight_${i}.png">
+    `;
+    }
     setTimeout(generatorPokemonEnemy1, 100);
     setTimeout(generatorPokemonEnemy1, 200);
     setTimeout(generatorPokemonEnemy1, 300);
@@ -220,6 +251,7 @@ for (let i = 0; i < ALLOBJECTPOKEMON.length; i++) {
     setTimeout(generatorPokemonEnemy1, 1400);
     setTimeout(generatorPokemonEnemy1, 1500);
     setTimeout(generatorPokemonEnemy1, 1600);
+    setTimeout(pokeballActiveEnemy1, 2600);
 
     function generatorPokemonEnemy1() {
       let rand = Math.floor(Math.random() * ALLOBJECTPOKEMON.length);
@@ -232,6 +264,86 @@ for (let i = 0; i < ALLOBJECTPOKEMON.length; i++) {
         <h3 class="pv">${rValue.pv}PV</h3><h3 class="pe">${rValue.pe}PE</h3>
         </div>
         `;
+      localStorage.setItem(`pokemonEnemy1`, JSON.stringify(rValue));
+    }
+
+    function pokeballActiveEnemy1() {
+      ICONEPOKEBALL1ENEMY.classList.add("none");
+      ICONEPOKEBALL1ACTIVEENEMY.classList.remove("none");
+    }
+
+    setTimeout(generatorPokemonEnemy2, 4600);
+    setTimeout(generatorPokemonEnemy2, 4700);
+    setTimeout(generatorPokemonEnemy2, 4800);
+    setTimeout(generatorPokemonEnemy2, 4900);
+    setTimeout(generatorPokemonEnemy2, 5000);
+    setTimeout(generatorPokemonEnemy2, 5100);
+    setTimeout(generatorPokemonEnemy2, 5200);
+    setTimeout(generatorPokemonEnemy2, 5300);
+    setTimeout(generatorPokemonEnemy2, 5400);
+    setTimeout(generatorPokemonEnemy2, 5500);
+    setTimeout(generatorPokemonEnemy2, 5600);
+    setTimeout(generatorPokemonEnemy2, 5700);
+    setTimeout(generatorPokemonEnemy2, 5800);
+    setTimeout(generatorPokemonEnemy2, 5900);
+    setTimeout(generatorPokemonEnemy2, 6000);
+    setTimeout(generatorPokemonEnemy2, 6100);
+    setTimeout(pokeballActiveEnemy2, 7100);
+
+    function generatorPokemonEnemy2() {
+      let rand = Math.floor(Math.random() * ALLOBJECTPOKEMON.length);
+      let rValue = ALLOBJECTPOKEMON[rand];
+      console.log(rValue);
+      BOXPOKEMONENEMY.innerHTML = `
+        <h2>${rValue.name}</h2>
+        <img class="img-pokemon-fight" src="./img/pokemon_fight_${rValue.image}.png">
+        <div class="box-pv-pe">
+        <h3 class="pv">${rValue.pv}PV</h3><h3 class="pe">${rValue.pe}PE</h3>
+        </div>
+        `;
+      localStorage.setItem(`pokemonEnemy2`, JSON.stringify(rValue));
+    }
+
+    function pokeballActiveEnemy2() {
+      ICONEPOKEBALL2ENEMY.classList.add("none");
+      ICONEPOKEBALL2ACTIVEENEMY.classList.remove("none");
+    }
+
+    setTimeout(generatorPokemonEnemy3, 9100);
+    setTimeout(generatorPokemonEnemy3, 9200);
+    setTimeout(generatorPokemonEnemy3, 9300);
+    setTimeout(generatorPokemonEnemy3, 9400);
+    setTimeout(generatorPokemonEnemy3, 9500);
+    setTimeout(generatorPokemonEnemy3, 9600);
+    setTimeout(generatorPokemonEnemy3, 9700);
+    setTimeout(generatorPokemonEnemy3, 9800);
+    setTimeout(generatorPokemonEnemy3, 9900);
+    setTimeout(generatorPokemonEnemy3, 10000);
+    setTimeout(generatorPokemonEnemy3, 11000);
+    setTimeout(generatorPokemonEnemy3, 11100);
+    setTimeout(generatorPokemonEnemy3, 11200);
+    setTimeout(generatorPokemonEnemy3, 11300);
+    setTimeout(generatorPokemonEnemy3, 11400);
+    setTimeout(generatorPokemonEnemy3, 11500);
+    setTimeout(pokeballActiveEnemy3, 12500);
+
+    function generatorPokemonEnemy3() {
+      let rand = Math.floor(Math.random() * ALLOBJECTPOKEMON.length);
+      let rValue = ALLOBJECTPOKEMON[rand];
+      console.log(rValue);
+      BOXPOKEMONENEMY.innerHTML = `
+        <h2>${rValue.name}</h2>
+        <img class="img-pokemon-fight" src="./img/pokemon_fight_${rValue.image}.png">
+        <div class="box-pv-pe">
+        <h3 class="pv">${rValue.pv}PV</h3><h3 class="pe">${rValue.pe}PE</h3>
+        </div>
+        `;
+      localStorage.setItem(`pokemonEnemy3`, JSON.stringify(rValue));
+    }
+
+    function pokeballActiveEnemy3() {
+      ICONEPOKEBALL3ENEMY.classList.add("none");
+      ICONEPOKEBALL3ACTIVEENEMY.classList.remove("none");
     }
   });
 }

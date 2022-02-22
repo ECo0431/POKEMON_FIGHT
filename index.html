@@ -11,16 +11,26 @@
 <body>
     <h1>Pokemon Fight</h1>
     <div class="box-icone-pokeball">
-        <img id="icone-pokeball-1" class="icone-pokeball" src="./img/pookeball_icone_white.png">
-        <img id="icone-pokeball-1-active" class="icone-pokeball-active none" src="./img/pookeball_icone_red.png">
-        <img id="icone-pokeball-2" class="icone-pokeball" src="./img/pookeball_icone_white.png">
-        <img id="icone-pokeball-2-active" class="icone-pokeball-active none" src="./img/pookeball_icone_red.png">
-        <img id="icone-pokeball-3" class="icone-pokeball" src="./img/pookeball_icone_white.png">
-        <img id="icone-pokeball-3-active" class="icone-pokeball-active none" src="./img/pookeball_icone_red.png">
+        <div class="box-icone-pokeball-playeur">
+            <img id="icone-pokeball-1" class="icone-pokeball" src="./img/pookeball_icone_white.png">
+            <img id="icone-pokeball-1-active" class="icone-pokeball-active none" src="./img/pookeball_icone_red.png">
+            <img id="icone-pokeball-2" class="icone-pokeball" src="./img/pookeball_icone_white.png">
+            <img id="icone-pokeball-2-active" class="icone-pokeball-active none" src="./img/pookeball_icone_red.png">
+            <img id="icone-pokeball-3" class="icone-pokeball" src="./img/pookeball_icone_white.png">
+            <img id="icone-pokeball-3-active" class="icone-pokeball-active none" src="./img/pookeball_icone_red.png">
+        </div>
+        <div class="box-icone-pokeball-enemy none">
+            <img id="icone-pokeball-1-enemy" class="icone-pokeball" src="./img/pookeball_icone_white.png">
+            <img id="icone-pokeball-1-active-enemy" class="icone-pokeball-active none" src="./img/pookeball_icone_red.png">
+            <img id="icone-pokeball-2-enemy" class="icone-pokeball" src="./img/pookeball_icone_white.png">
+            <img id="icone-pokeball-2-active-enemy" class="icone-pokeball-active none" src="./img/pookeball_icone_red.png">
+            <img id="icone-pokeball-3-enemy" class="icone-pokeball" src="./img/pookeball_icone_white.png">
+            <img id="icone-pokeball-3-active-enemy" class="icone-pokeball-active none" src="./img/pookeball_icone_red.png">
+        </div>
     </div>
 <div class="pokemon-fight">
     <div id="pokemon-fight-0" class="none">
-        <div id="nom-pokemon-0"></div>
+        <div id="nom-pokemon-0" class="nom-pokemon"></div>
         <div id="box-img-pokemon-fight-0"></div>
         <div id="box-pv-pe-0" class="box-pv-pe"></div>
         <div class="box-btn-select-pokemon">
@@ -31,7 +41,7 @@
         </div>
     </div>
     <div id="pokemon-fight-1" class="none">
-        <div id="nom-pokemon-1"></div>
+        <div id="nom-pokemon-1" class="nom-pokemon"></div>
         <div id="box-img-pokemon-fight-1"></div>
         <div id="box-pv-pe-1" class="box-pv-pe"></div>
         <div class="box-btn-select-pokemon">
@@ -42,7 +52,7 @@
         </div>
     </div>
     <div id="pokemon-fight-2" class="none">
-        <div id="nom-pokemon-2"></div>
+        <div id="nom-pokemon-2" class="nom-pokemon"></div>
         <div id="box-img-pokemon-fight-2"></div>
         <div id="box-pv-pe-2" class="box-pv-pe"></div>
         <div class="box-btn-select-pokemon">
@@ -53,7 +63,7 @@
         </div>
     </div>
     <div id="pokemon-fight-3" class="none">
-        <div id="nom-pokemon-3"></div>
+        <div id="nom-pokemon-3" class="nom-pokemon"></div>
         <div id="box-img-pokemon-fight-3"></div>
         <div id="box-pv-pe-3" class="box-pv-pe"></div>
         <div class="box-btn-select-pokemon">
@@ -64,7 +74,7 @@
         </div>
     </div>
     <div id="pokemon-fight-4" class="none">
-        <div id="nom-pokemon-4"></div>
+        <div id="nom-pokemon-4" class="nom-pokemon"></div>
         <div id="box-img-pokemon-fight-4"></div>
         <div id="box-pv-pe-4" class="box-pv-pe"></div>
         <div class="box-btn-select-pokemon">
@@ -75,7 +85,7 @@
         </div>
     </div>
     <div id="pokemon-fight-5" class="none">
-        <div id="nom-pokemon-5"></div>
+        <div id="nom-pokemon-5" class="nom-pokemon"></div>
         <div id="box-img-pokemon-fight-5"></div>
         <div id="box-pv-pe-5" class="box-pv-pe"></div>
         <div class="box-btn-select-pokemon">
@@ -86,7 +96,7 @@
         </div>
     </div>
     <div id="pokemon-fight-6" class="none">
-        <div id="nom-pokemon-6"></div>
+        <div id="nom-pokemon-6" class="nom-pokemon"></div>
         <div id="box-img-pokemon-fight-6"></div>
         <div id="box-pv-pe-6" class="box-pv-pe"></div>
         <div class="box-btn-select-pokemon">
@@ -97,7 +107,7 @@
         </div>
     </div>
     <div id="pokemon-fight-7" class="none">
-        <div id="nom-pokemon-7"></div>
+        <div id="nom-pokemon-7" class="nom-pokemon"></div>
         <div id="box-img-pokemon-fight-7"></div>
         <div id="box-pv-pe-7" class="box-pv-pe"></div>
         <div class="box-btn-select-pokemon">
@@ -108,7 +118,7 @@
         </div>
     </div>
     <div id="pokemon-fight-8" class="none">
-        <div id="nom-pokemon-8"></div>
+        <div id="nom-pokemon-8" class="nom-pokemon"></div>
         <div id="box-img-pokemon-fight-8"></div>
         <div id="box-pv-pe-8" class="box-pv-pe"></div>
         <div class="box-btn-select-pokemon">
@@ -119,7 +129,7 @@
         </div>
     </div>
     <div id="pokemon-fight-9" class="none">
-        <div id="nom-pokemon-9"></div>
+        <div id="nom-pokemon-9" class="nom-pokemon"></div>
         <div id="box-img-pokemon-fight-9"></div>
         <div id="box-pv-pe-9" class="box-pv-pe"></div>
         <div class="box-btn-select-pokemon">
@@ -130,7 +140,7 @@
         </div>
     </div>
     <div id="pokemon-fight-10" class="none">
-        <div id="nom-pokemon-10"></div>
+        <div id="nom-pokemon-10" class="nom-pokemon"></div>
         <div id="box-img-pokemon-fight-10"></div>
         <div id="box-pv-pe-10" class="box-pv-pe"></div>
         <div class="box-btn-select-pokemon">
@@ -141,7 +151,7 @@
         </div>
     </div>
     <div id="pokemon-fight-11" class="none">
-        <div id="nom-pokemon-11"></div>
+        <div id="nom-pokemon-11" class="nom-pokemon"></div>
         <div id="box-img-pokemon-fight-11"></div>
         <div id="box-pv-pe-11" class="box-pv-pe"></div>
         <div class="box-btn-select-pokemon">

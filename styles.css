@@ -68,6 +68,7 @@ h2 {
   animation-duration: 5s;
   animation-name: animH2;
   animation-iteration-count: infinite;
+  z-index: 2;
 }
 
 @keyframes animH2 {
@@ -206,6 +207,7 @@ h2 {
   animation-duration: 5s;
   animation-name: animImgPkFight;
   animation-iteration-count: infinite;
+  position: relative;
 }
 
 @keyframes animImgPkFight {
@@ -238,12 +240,12 @@ h2 {
 
 .box-icone-pokeball {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .icone-pokeball,
 .icone-pokeball-active {
-  width: 50px;
+  width: 100px;
   margin: 20px;
 }
 
@@ -321,4 +323,27 @@ h2 {
 .box-pv-pe {
   display: flex;
   justify-content: space-between;
+}
+
+.pokemon-fight-pokeball {
+  position: absolute;
+  z-index: 2;
+  border-radius: 20px;
+  animation-duration: 1s;
+  animation-name: animPokeballFightImg;
+  animation-iteration-count: 1;
+}
+
+@keyframes animPokeballFightImg {
+  0% {
+    opacity: 0%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }
