@@ -1,3 +1,4 @@
+import { Pokemon } from "./js/pokemon.js";
 const BTNPOKEMON = [];
 const POKEMONFIGHT = [];
 const BTNSELECTPOKEMON = [];
@@ -13,7 +14,6 @@ const ICONEPOKEBALL1ACTIVEENEMY = document.querySelector(
   "#icone-pokeball-1-active-enemy"
 );
 
-console.log(ICONEPOKEBALL1ACTIVEENEMY);
 const ICONEPOKEBALL2ENEMY = document.querySelector("#icone-pokeball-2-enemy");
 const ICONEPOKEBALL2ACTIVEENEMY = document.querySelector(
   "#icone-pokeball-2-active-enemy"
@@ -42,37 +42,18 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-class Pokemon {
-  constructor(name, pv, pe, type, image) {
-    this.name = name;
-    this.pv = pv;
-    this.pe = pe;
-    this.type = type;
-    this.image = image;
-  }
-  attaqueDeNiveau1() {
-    getRandomIntInclusive(1, 10);
-  }
-  attaqueDeNiveau2() {
-    getRandomIntInclusive(10, 20);
-  }
-  attaqueDeNiveau3() {
-    getRandomIntInclusive(20, 30);
-  }
-}
-
-const CARAPUCE = new Pokemon("CARAPUCE", 70, 200, "eau", 0);
-const BULBIZZARE = new Pokemon("BULBIZZARE", 70, 200, "plante", 1);
-const DRACAUFEU = new Pokemon("DRACAUFEU", 120, 200, "feu", 2);
+const CARAPUCE = new Pokemon("CARAPUCE", 70, 140, "eau", 0);
+const BULBIZZARE = new Pokemon("BULBIZZARE", 70, 140, "plante", 1);
+const DRACAUFEU = new Pokemon("DRACAUFEU", 120, 240, "feu", 2);
 const LEVIATOR = new Pokemon("LEVIATOR", 100, 200, "eau", 3);
-const MAGICARPE = new Pokemon("MAGICARPE", 30, 200, "eau", 4);
-const METAMORPH = new Pokemon("METAMORPH", 60, 200, "normal", 5);
-const MEWTWO = new Pokemon("MEWTWO", 120, 200, "psy", 6);
-const MRMIME = new Pokemon("MR-MIME", 80, 200, "psy", 7);
-const PIKACHU = new Pokemon("PIKACHU", 60, 200, "electrique", 8);
-const PSYKOKWAK = new Pokemon("PSYKOKWAK", 60, 200, "eau", 9);
-const RONDOUDOU = new Pokemon("RONDOUDOU", 70, 200, "fee", 10);
-const RONFLEX = new Pokemon("RONFLEX", 150, 200, "normal", 11);
+const MAGICARPE = new Pokemon("MAGICARPE", 30, 60, "eau", 4);
+const METAMORPH = new Pokemon("METAMORPH", 60, 120, "normal", 5);
+const MEWTWO = new Pokemon("MEWTWO", 120, 240, "psy", 6);
+const MRMIME = new Pokemon("MR-MIME", 80, 160, "psy", 7);
+const PIKACHU = new Pokemon("PIKACHU", 60, 120, "electrique", 8);
+const PSYKOKWAK = new Pokemon("PSYKOKWAK", 60, 120, "eau", 9);
+const RONDOUDOU = new Pokemon("RONDOUDOU", 70, 140, "fee", 10);
+const RONFLEX = new Pokemon("RONFLEX", 150, 300, "normal", 11);
 const ALLOBJECTPOKEMON = [
   CARAPUCE,
   BULBIZZARE,
@@ -93,8 +74,8 @@ for (let i = 0; i < NBRPOKEMON; i++) {
   POKEMONFIGHT[i] = document.querySelector(`#pokemon-fight-${i}`);
   BTNSELECTPOKEMON[i] = document.querySelector(`#btn-select-pokemon-${i}`);
   BOXBTNPOKEMON[i] = document.querySelector(`#box-btn-pokemon-${i}`);
-  ICONECLOSEBTN[i] = document.querySelector(`#icone-close-${i}`);
   BOXBTNCOMBATTRE[i] = document.querySelector(`.box-btn-combat-pokemon-${i}`);
+  ICONECLOSEBTN[i] = document.querySelector(`#icone-close-${i}`);
   pokemonSeleted[i] = false;
 }
 
@@ -178,12 +159,10 @@ for (let i = 0; i < BTNSELECTPOKEMON.length; i++) {
         BTNSELECTPOKEMON[i].classList.add("none-important");
       }
     }
-    console.log(iconePokeball1Active);
-    console.log(iconePokeball2Active);
-    console.log(iconePokeball3Active);
+
     BOXIMGPOKEMONFIGHT[i].innerHTML = `
     <img class="pokemon-fight-pokeball" src="./img/pokemon_fight_pokeball.png">
-    <img class="img-pokemon-fight" src="./img/pokemon_fight_${i}.png">
+    <img class="img-pokemon-fight border-black" src="./img/pokemon_fight_${i}.png">
   `;
   });
   ICONECLOSEBTN[i].addEventListener("click", () => {
@@ -235,6 +214,7 @@ for (let i = 0; i < ALLOBJECTPOKEMON.length; i++) {
       <img class="img-pokemon-fight" src="./img/pokemon_fight_${i}.png">
     `;
     }
+
     setTimeout(generatorPokemonEnemy1, 100);
     setTimeout(generatorPokemonEnemy1, 200);
     setTimeout(generatorPokemonEnemy1, 300);
@@ -256,7 +236,6 @@ for (let i = 0; i < ALLOBJECTPOKEMON.length; i++) {
     function generatorPokemonEnemy1() {
       let rand = Math.floor(Math.random() * ALLOBJECTPOKEMON.length);
       let rValue = ALLOBJECTPOKEMON[rand];
-      console.log(rValue);
       BOXPOKEMONENEMY.innerHTML = `
         <h2>${rValue.name}</h2>
         <img class="img-pokemon-fight" src="./img/pokemon_fight_${rValue.image}.png">
@@ -293,7 +272,6 @@ for (let i = 0; i < ALLOBJECTPOKEMON.length; i++) {
     function generatorPokemonEnemy2() {
       let rand = Math.floor(Math.random() * ALLOBJECTPOKEMON.length);
       let rValue = ALLOBJECTPOKEMON[rand];
-      console.log(rValue);
       BOXPOKEMONENEMY.innerHTML = `
         <h2>${rValue.name}</h2>
         <img class="img-pokemon-fight" src="./img/pokemon_fight_${rValue.image}.png">
@@ -330,7 +308,6 @@ for (let i = 0; i < ALLOBJECTPOKEMON.length; i++) {
     function generatorPokemonEnemy3() {
       let rand = Math.floor(Math.random() * ALLOBJECTPOKEMON.length);
       let rValue = ALLOBJECTPOKEMON[rand];
-      console.log(rValue);
       BOXPOKEMONENEMY.innerHTML = `
         <h2>${rValue.name}</h2>
         <img class="img-pokemon-fight" src="./img/pokemon_fight_${rValue.image}.png">
@@ -347,3 +324,5 @@ for (let i = 0; i < ALLOBJECTPOKEMON.length; i++) {
     }
   });
 }
+
+class GeneratorPokemon {}

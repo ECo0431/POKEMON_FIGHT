@@ -210,6 +210,10 @@ h2 {
   position: relative;
 }
 
+.border-black {
+  border: 10px solid black;
+}
+
 @keyframes animImgPkFight {
   0% {
     box-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
